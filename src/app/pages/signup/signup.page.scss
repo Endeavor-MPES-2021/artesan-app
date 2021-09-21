@@ -1,0 +1,120 @@
+ion-header {
+  ion-toolbar {
+    --ion-toolbar-background: transparent;
+
+    // For the skip button
+    ion-button {
+      --color: var(--ion-color-lightest);
+    }
+  }
+}
+
+ion-content {
+  // To get the ion-content behind the ion-header
+  //position: absolute;
+  //top: 0;
+  --background: #3C3C39;
+}
+
+ion-header {
+  --background: #3C3C39;
+
+  ion-toolbar {
+    height: 200px;
+    --background: #3C3C39;
+
+  }
+}
+
+ion-list {
+  background: transparent;
+
+  ion-item {
+    --background: inherit;
+    --border-color: white; // default underline color
+    --highlight-color-invalid: white; // invalid underline color
+
+    ion-input {
+      --color: white;
+      font-family: Roboto;
+    }
+
+    ion-label {
+      --color: white;
+      font-family: Roboto;
+    }
+  }
+}
+
+.header-logo {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.align-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.primary-heading {
+  font-family: Roboto;
+  font-size: 25pt;
+  font-weight: bold;
+}
+
+.secundary-heading {
+  font-family: Roboto;
+  font-size: 24pt;
+  font-weight: bold;
+}
+
+.section-header {
+  font-family: Roboto;
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-family: Roboto;
+  font-size: 10pt;
+}
+
+.button-rounded-white {
+  --border-radius: 50px;
+  --background: #FFFFFF;
+  --color: #1B1C20;
+  font-family: Roboto;
+  font-size: 14pt;
+  font-weight: lighter;
+  height: 49px;
+  width: 186px;
+}
+
+.button-rounded-grey {
+  --border-radius: 50px;
+  --border-width: 1px;
+  --border-color: #B2ADA4;
+  --border-style: solid;
+  --background: transparent;
+  --color: #FFFFF;
+  font-family: Roboto;
+  font-size: 14pt;
+  font-weight: lighter;
+  height: 49px;
+  width: 295px;
+}
+
+.button-squared {
+  --background: #B2ADA4;
+  --color: #FFFFFF;
+  font-family: Roboto;
+  font-size: 14pt;
+  font-weight: lighter;
+  height: 70px;
+}

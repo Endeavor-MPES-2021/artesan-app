@@ -62,16 +62,25 @@
 
   <div class='align-center'>
     <ion-text color="white" class='primary-heading'>
-      Buscar<br>Artesanato
+      Onde<br>Comprar
     </ion-text>
   </div>
 
-  <div class='ion-text-center ion-padding-top'>
-    <ion-button class="button-rounded-white"  routerLink="/results" id="camera">Câmera</ion-button>
+  <div class='align-center'>
+    <ion-text color="white" class='subtitle'>
+      Não encontrou o que você procurava?<br>Clique aqui
+    </ion-text>
   </div>
 
-  <div class='ion-text-center ion-padding-top'>
-    <ion-button class="button-rounded-white"  routerLink="/login" id="galeria">Galeria</ion-button>
+  <div class="container">
+    <ion-card style='height: 145px' class="category-card" *ngFor="let card of [0,1,2,3,4,5,6]">
+      <img style='position: absolute' src="https://img.mobiscroll.com/demos/card_6.png">
+      <ion-card-header>
+        <ion-card-title>
+          Titulo
+        </ion-card-title>
+      </ion-card-header>
+    </ion-card>
   </div>
 
 </ion-content>

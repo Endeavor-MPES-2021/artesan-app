@@ -5,6 +5,11 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:8080/api',
+
+  appShellConfig: {
+    debug: false,
+    networkDelay: 0
+  }
 };
 
 /*

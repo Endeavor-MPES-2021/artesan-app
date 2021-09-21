@@ -2,15 +2,15 @@
   "BACK_BUTTON_TEXT": "Voltar",
 
   "NAME": "Nome",
-  "FIRST_NAME": "First Name",
-  "LAST_NAME": "Last Name",
-  "EMAIL": "Email",
+  "FIRST_NAME": "Nome",
+  "LAST_NAME": "Sobrenome",
+  "EMAIL": "E-mail",
   "USERNAME": "Nome de Usuário",
   "PASSWORD": "Senha",
-  "REMEMBER_ME": "Remember Me",
+  "REMEMBER_ME": "Lembre-me",
   "LOGIN": "Entrar",
   "SIGNUP": "Cadastre-se",
-  "NO_ACCOUNT_MESSAGE": "Don't have an account yet?",
+  "NO_ACCOUNT_MESSAGE": "Ainda não tem uma conta?",
 
   "TAB1_TITLE": "Itens",
   "TAB2_TITLE": "Busca",
@@ -44,8 +44,8 @@
 
   "SETTINGS_PAGE_PROFILE": "Editar Perfil",
 
-  "WELCOME_TITLE": "Bem-vindo",
-  "LOGOUT_TITLE": "Logout",
+  "WELCOME_TITLE": "Bem-vindo(a)",
+  "LOGOUT_TITLE": "Sair",
 
   "LOGIN_TITLE": "Entrar",
   "LOGIN_ERROR": "Não foi possível entrar na sua conta. Verifique seus dados e tente novamente.",

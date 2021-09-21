@@ -1,21 +1,90 @@
-.hipster {
-  display: block;
-  width: 209px;
-  height: 300px;
-  margin: 20px auto;
-  background: url('../../../assets/img/jhipster_family_member_3.svg') no-repeat center top;
-  background-size: contain;
-}
+// Note:  All the CSS variables defined below are overrides of Ionic elements CSS Custom Properties
+ion-header {
+  ion-toolbar {
+    --ion-toolbar-background: transparent;
 
-/* wait autoprefixer update to allow simple generation of high pixel density media query */
-@media only screen and (-webkit-min-device-pixel-ratio: 2),
-  only screen and (min--moz-device-pixel-ratio: 2),
-  only screen and (-o-min-device-pixel-ratio: 2/1),
-  only screen and (min-device-pixel-ratio: 2),
-  only screen and (min-resolution: 192dpi),
-  only screen and (min-resolution: 2dppx) {
-  .hipster {
-    background: url('../../../assets/img/jhipster_family_member_3.svg') no-repeat center top;
-    background-size: contain;
+    // For the skip button
+    ion-button {
+      --color: var(--ion-color-lightest);
+    }
   }
 }
+
+ion-content {
+  --background: #3C3C39;
+}
+
+ion-header {
+  ion-toolbar {
+    height: 434px;
+    background: url('../../../assets/img/bolas.png') no-repeat center/100%;
+  }
+}
+
+.header-logo {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+}
+
+.align-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.primary-heading {
+  font-family: Roboto;
+  font-size: 25pt;
+  font-weight: bold;
+}
+
+.secundary-heading {
+  font-family: Roboto;
+  font-size: 24pt;
+  font-weight: bold;
+}
+
+.section-header {
+  font-family: Roboto;
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-family: Roboto;
+  font-size: 10pt;
+}
+
+.button-rounded-white {
+  --border-radius: 50px;
+  --background: #FFFFFF;
+  --color: #1B1C20;
+  font-size: 14pt;
+  font-weight: lighter;
+  height: 49px;
+  width: 186px;
+}
+
+.ion-item-button-squared {
+  --background: #B2ADA4;
+  --color: #FFFFFF;
+  --border-style: none;
+  --min-height: 70px;
+  font-size: 14pt;
+  font-weight: lighter;
+}
+
+
+//.button-squared {
+//  --background: #B2ADA4;
+//  --color: #FFFFFF;
+//  font-size: 14pt;
+//  font-weight: lighter;
+//  height: 70px;
+//}
+

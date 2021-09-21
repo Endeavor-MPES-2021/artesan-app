@@ -1,0 +1,12 @@
+ion-tab-bar {
+  --background: white;
+  --color: white;
+  --border: none;
+
+  ion-tab-button {
+    --color: #707070;
+    --color-selected: #aea5a0;
+    font-weight: lighter;
+    //font-size: 12pt;
+  }
+}
