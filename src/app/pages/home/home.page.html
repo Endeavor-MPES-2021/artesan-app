@@ -1,77 +1,104 @@
-<ion-header class="ion-no-border">
+<ion-header class='ion-no-border'>
   <ion-toolbar>
     <ion-buttons slot='end'>
       <ion-button (click)='logout()' id='logout'>
-        SAIR
         <ion-icon name='log-out' slot='end'></ion-icon>
       </ion-button>
     </ion-buttons>
-
     <ion-title>
-      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="131.099" height="14.118" viewBox="0 0 131.099 14.118">
-      <defs>
-        <clipPath id="clip-path">
-          <path id="Caminho_123" data-name="Caminho 123" d="M0-18.234H131.1V-32.352H0Z" transform="translate(0 32.352)" fill="#3c3c39"/>
-        </clipPath>
-      </defs>
-      <g id="Grupo_79" data-name="Grupo 79" transform="translate(0 32.352)">
-        <g id="Grupo_67" data-name="Grupo 67" transform="translate(0 -29.461)">
-          <path id="Caminho_118" data-name="Caminho 118" d="M-11.465,0l-3.187,8.488L-17.846,0h-2.495V11.074h1.917V7.424l-.19-4.876,3.263,8.526h1.376L-10.7,2.54l-.19,4.884v3.651h1.917V0Z" transform="translate(20.341)" fill="#3c3c39"/>
-        </g>
-        <g id="Grupo_72" data-name="Grupo 72" transform="translate(0 -32.352)" clip-path="url(#clip-path)">
-          <g id="Grupo_68" data-name="Grupo 68" transform="translate(15.901 0)">
-            <path id="Caminho_119" data-name="Caminho 119" d="M-9.285-14.708h-4.29l-.9,2.579h-2L-12.29-23.2h1.727l4.19,11.074H-8.381ZM-8.608-26a2.042,2.042,0,0,1-.484,1.392,1.54,1.54,0,0,1-1.213.555,1.8,1.8,0,0,1-.514-.065,3.306,3.306,0,0,1-.615-.292A3.061,3.061,0,0,0-12-24.687a1.345,1.345,0,0,0-.361-.046.647.647,0,0,0-.491.217.8.8,0,0,0-.2.566l-1.133-.06a2.1,2.1,0,0,1,.483-1.407,1.514,1.514,0,0,1,1.206-.57,2.247,2.247,0,0,1,1.046.342,2.2,2.2,0,0,0,1.007.343.659.659,0,0,0,.495-.217.8.8,0,0,0,.2-.575Zm-4.427,9.743h3.208l-1.6-4.595Z" transform="translate(16.474 26.095)" fill="#3c3c39"/>
+      <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='131.099' height='14.118'
+           viewBox='0 0 131.099 14.118'>
+        <defs>
+          <clipPath id='clip-path'>
+            <path id='Caminho_123' data-name='Caminho 123' d='M0-18.234H131.1V-32.352H0Z'
+                  transform='translate(0 32.352)' fill='#3c3c39' />
+          </clipPath>
+        </defs>
+        <g id='Grupo_79' data-name='Grupo 79' transform='translate(0 32.352)'>
+          <g id='Grupo_67' data-name='Grupo 67' transform='translate(0 -29.461)'>
+            <path id='Caminho_118' data-name='Caminho 118'
+                  d='M-11.465,0l-3.187,8.488L-17.846,0h-2.495V11.074h1.917V7.424l-.19-4.876,3.263,8.526h1.376L-10.7,2.54l-.19,4.884v3.651h1.917V0Z'
+                  transform='translate(20.341)' fill='#3c3c39' />
           </g>
-          <g id="Grupo_69" data-name="Grupo 69" transform="translate(29.864 2.739)">
-            <path id="Caminho_120" data-name="Caminho 120" d="M-11.868-7.721a6.815,6.815,0,0,1-.562,2.857,4.248,4.248,0,0,1-1.61,1.886,4.413,4.413,0,0,1-2.408.658,4.432,4.432,0,0,1-2.4-.658,4.321,4.321,0,0,1-1.628-1.875,6.586,6.586,0,0,1-.582-2.807v-.624a6.721,6.721,0,0,1,.575-2.86,4.306,4.306,0,0,1,1.619-1.9,4.409,4.409,0,0,1,2.4-.658,4.452,4.452,0,0,1,2.4.65,4.256,4.256,0,0,1,1.616,1.871,6.713,6.713,0,0,1,.579,2.841ZM-13.792-8.3a4.838,4.838,0,0,0-.7-2.822,2.277,2.277,0,0,0-1.974-.981,2.272,2.272,0,0,0-1.951.977,4.76,4.76,0,0,0-.719,2.766v.638A4.794,4.794,0,0,0-18.42-4.9a2.287,2.287,0,0,0,1.972,1,2.265,2.265,0,0,0,1.968-.974,4.916,4.916,0,0,0,.688-2.845Z" transform="translate(21.057 13.699)" fill="#3c3c39"/>
+          <g id='Grupo_72' data-name='Grupo 72' transform='translate(0 -32.352)' clip-path='url(#clip-path)'>
+            <g id='Grupo_68' data-name='Grupo 68' transform='translate(15.901 0)'>
+              <path id='Caminho_119' data-name='Caminho 119'
+                    d='M-9.285-14.708h-4.29l-.9,2.579h-2L-12.29-23.2h1.727l4.19,11.074H-8.381ZM-8.608-26a2.042,2.042,0,0,1-.484,1.392,1.54,1.54,0,0,1-1.213.555,1.8,1.8,0,0,1-.514-.065,3.306,3.306,0,0,1-.615-.292A3.061,3.061,0,0,0-12-24.687a1.345,1.345,0,0,0-.361-.046.647.647,0,0,0-.491.217.8.8,0,0,0-.2.566l-1.133-.06a2.1,2.1,0,0,1,.483-1.407,1.514,1.514,0,0,1,1.206-.57,2.247,2.247,0,0,1,1.046.342,2.2,2.2,0,0,0,1.007.343.659.659,0,0,0,.495-.217.8.8,0,0,0,.2-.575Zm-4.427,9.743h3.208l-1.6-4.595Z'
+                    transform='translate(16.474 26.095)' fill='#3c3c39' />
+            </g>
+            <g id='Grupo_69' data-name='Grupo 69' transform='translate(29.864 2.739)'>
+              <path id='Caminho_120' data-name='Caminho 120'
+                    d='M-11.868-7.721a6.815,6.815,0,0,1-.562,2.857,4.248,4.248,0,0,1-1.61,1.886,4.413,4.413,0,0,1-2.408.658,4.432,4.432,0,0,1-2.4-.658,4.321,4.321,0,0,1-1.628-1.875,6.586,6.586,0,0,1-.582-2.807v-.624a6.721,6.721,0,0,1,.575-2.86,4.306,4.306,0,0,1,1.619-1.9,4.409,4.409,0,0,1,2.4-.658,4.452,4.452,0,0,1,2.4.65,4.256,4.256,0,0,1,1.616,1.871,6.713,6.713,0,0,1,.579,2.841ZM-13.792-8.3a4.838,4.838,0,0,0-.7-2.822,2.277,2.277,0,0,0-1.974-.981,2.272,2.272,0,0,0-1.951.977,4.76,4.76,0,0,0-.719,2.766v.638A4.794,4.794,0,0,0-18.42-4.9a2.287,2.287,0,0,0,1.972,1,2.265,2.265,0,0,0,1.968-.974,4.916,4.916,0,0,0,.688-2.845Z'
+                    transform='translate(21.057 13.699)' fill='#3c3c39' />
+            </g>
+            <g id='Grupo_70' data-name='Grupo 70' transform='translate(44.725 2.739)'>
+              <path id='Caminho_121' data-name='Caminho 121'
+                    d='M-10.648-10.04A3.977,3.977,0,0,1-11.9-7.362a4.14,4.14,0,0,1-2.826.928A3.905,3.905,0,0,1-16.9-7.051,4.018,4.018,0,0,1-18.369-8.8a6.217,6.217,0,0,1-.524-2.582v-1.437a6.254,6.254,0,0,1,.517-2.617,3.967,3.967,0,0,1,1.486-1.76,4.054,4.054,0,0,1,2.234-.62,3.968,3.968,0,0,1,2.81.958,4.018,4.018,0,0,1,1.2,2.655h-.943a2.819,2.819,0,0,0-3.065-2.822,2.909,2.909,0,0,0-2.4,1.126,4.892,4.892,0,0,0-.893,3.114v1.355a4.924,4.924,0,0,0,.87,3.06,2.806,2.806,0,0,0,2.355,1.142,3.121,3.121,0,0,0,2.214-.7,3.38,3.38,0,0,0,.92-2.111Z'
+                    transform='translate(18.893 17.813)' fill='#3c3c39' />
+            </g>
+            <g id='Grupo_71' data-name='Grupo 71' transform='translate(57.911 2.739)'>
+              <path id='Caminho_122' data-name='Caminho 122'
+                    d='M-11.151-8.125A6.393,6.393,0,0,1-11.68-5.44a4.028,4.028,0,0,1-1.51,1.78,4.13,4.13,0,0,1-2.266.624A3.933,3.933,0,0,1-18.59-4.425,5.548,5.548,0,0,1-19.784-8.17V-9.312a6.358,6.358,0,0,1,.537-2.682,4.1,4.1,0,0,1,1.518-1.794,4.1,4.1,0,0,1,2.258-.628,4.144,4.144,0,0,1,2.256.615,4.051,4.051,0,0,1,1.51,1.742,6.263,6.263,0,0,1,.555,2.609Zm-.935-1.2a4.889,4.889,0,0,0-.906-3.134,3,3,0,0,0-2.48-1.134,3,3,0,0,0-2.459,1.138,4.923,4.923,0,0,0-.917,3.176v1.156A4.9,4.9,0,0,0-17.935-5a3,3,0,0,0,2.48,1.152,2.973,2.973,0,0,0,2.48-1.138,5.022,5.022,0,0,0,.89-3.168Z'
+                    transform='translate(19.784 14.415)' fill='#3c3c39' />
+            </g>
           </g>
-          <g id="Grupo_70" data-name="Grupo 70" transform="translate(44.725 2.739)">
-            <path id="Caminho_121" data-name="Caminho 121" d="M-10.648-10.04A3.977,3.977,0,0,1-11.9-7.362a4.14,4.14,0,0,1-2.826.928A3.905,3.905,0,0,1-16.9-7.051,4.018,4.018,0,0,1-18.369-8.8a6.217,6.217,0,0,1-.524-2.582v-1.437a6.254,6.254,0,0,1,.517-2.617,3.967,3.967,0,0,1,1.486-1.76,4.054,4.054,0,0,1,2.234-.62,3.968,3.968,0,0,1,2.81.958,4.018,4.018,0,0,1,1.2,2.655h-.943a2.819,2.819,0,0,0-3.065-2.822,2.909,2.909,0,0,0-2.4,1.126,4.892,4.892,0,0,0-.893,3.114v1.355a4.924,4.924,0,0,0,.87,3.06,2.806,2.806,0,0,0,2.355,1.142,3.121,3.121,0,0,0,2.214-.7,3.38,3.38,0,0,0,.92-2.111Z" transform="translate(18.893 17.813)" fill="#3c3c39"/>
+          <g id='Grupo_73' data-name='Grupo 73' transform='translate(72.018 -29.461)'>
+            <path id='Caminho_124' data-name='Caminho 124'
+                  d='M-9.45,0V9.485L-15.823,0h-.943V11.074h.943V1.6l6.368,9.477h.935V0Z' transform='translate(16.766)'
+                  fill='#3c3c39' />
           </g>
-          <g id="Grupo_71" data-name="Grupo 71" transform="translate(57.911 2.739)">
-            <path id="Caminho_122" data-name="Caminho 122" d="M-11.151-8.125A6.393,6.393,0,0,1-11.68-5.44a4.028,4.028,0,0,1-1.51,1.78,4.13,4.13,0,0,1-2.266.624A3.933,3.933,0,0,1-18.59-4.425,5.548,5.548,0,0,1-19.784-8.17V-9.312a6.358,6.358,0,0,1,.537-2.682,4.1,4.1,0,0,1,1.518-1.794,4.1,4.1,0,0,1,2.258-.628,4.144,4.144,0,0,1,2.256.615,4.051,4.051,0,0,1,1.51,1.742,6.263,6.263,0,0,1,.555,2.609Zm-.935-1.2a4.889,4.889,0,0,0-.906-3.134,3,3,0,0,0-2.48-1.134,3,3,0,0,0-2.459,1.138,4.923,4.923,0,0,0-.917,3.176v1.156A4.9,4.9,0,0,0-17.935-5a3,3,0,0,0,2.48,1.152,2.973,2.973,0,0,0,2.48-1.138,5.022,5.022,0,0,0,.89-3.168Z" transform="translate(19.784 14.415)" fill="#3c3c39"/>
+          <g id='Grupo_74' data-name='Grupo 74' transform='translate(86.193 -29.461)'>
+            <path id='Caminho_125' data-name='Caminho 125'
+                  d='M0,0V11.074H6.891v-.791H.935V5.765H6.115V4.974H.935V.791H6.852V0Z' fill='#3c3c39' />
+          </g>
+          <g id='Grupo_76' data-name='Grupo 76' transform='translate(0 -32.352)' clip-path='url(#clip-path)'>
+            <g id='Grupo_75' data-name='Grupo 75' transform='translate(97.767 2.739)'>
+              <path id='Caminho_126' data-name='Caminho 126'
+                    d='M-10.648-10.04A3.977,3.977,0,0,1-11.9-7.362a4.14,4.14,0,0,1-2.826.928A3.9,3.9,0,0,1-16.9-7.051,4.016,4.016,0,0,1-18.369-8.8a6.217,6.217,0,0,1-.524-2.582v-1.437a6.261,6.261,0,0,1,.517-2.617,3.967,3.967,0,0,1,1.486-1.76,4.056,4.056,0,0,1,2.234-.62,3.968,3.968,0,0,1,2.811.958,4.015,4.015,0,0,1,1.2,2.655h-.943a2.819,2.819,0,0,0-3.065-2.822,2.91,2.91,0,0,0-2.4,1.126,4.9,4.9,0,0,0-.893,3.114v1.355a4.924,4.924,0,0,0,.871,3.06,2.806,2.806,0,0,0,2.354,1.142,3.12,3.12,0,0,0,2.214-.7,3.38,3.38,0,0,0,.92-2.111Z'
+                    transform='translate(18.893 17.813)' fill='#3c3c39' />
+            </g>
+          </g>
+          <g id='Grupo_77' data-name='Grupo 77' transform='translate(110.178 -29.461)'>
+            <path id='Caminho_128' data-name='Caminho 128' d='M0,0V.791H3.787V11.074h.936V.791h3.8V0Z' fill='#3c3c39' />
+          </g>
+          <g id='Grupo_78' data-name='Grupo 78' transform='translate(121.827 -29.461)'>
+            <path id='Caminho_129' data-name='Caminho 129'
+                  d='M-5.414,0-9.606,11.074h.981l1.141-3.111h5.028l1.147,3.111h.974L-4.525,0Zm.44,1.141,2.222,6.031H-7.2Z'
+                  transform='translate(9.606)' fill='#3c3c39' />
           </g>
         </g>
-        <g id="Grupo_73" data-name="Grupo 73" transform="translate(72.018 -29.461)">
-          <path id="Caminho_124" data-name="Caminho 124" d="M-9.45,0V9.485L-15.823,0h-.943V11.074h.943V1.6l6.368,9.477h.935V0Z" transform="translate(16.766)" fill="#3c3c39"/>
-        </g>
-        <g id="Grupo_74" data-name="Grupo 74" transform="translate(86.193 -29.461)">
-          <path id="Caminho_125" data-name="Caminho 125" d="M0,0V11.074H6.891v-.791H.935V5.765H6.115V4.974H.935V.791H6.852V0Z" fill="#3c3c39"/>
-        </g>
-        <g id="Grupo_76" data-name="Grupo 76" transform="translate(0 -32.352)" clip-path="url(#clip-path)">
-          <g id="Grupo_75" data-name="Grupo 75" transform="translate(97.767 2.739)">
-            <path id="Caminho_126" data-name="Caminho 126" d="M-10.648-10.04A3.977,3.977,0,0,1-11.9-7.362a4.14,4.14,0,0,1-2.826.928A3.9,3.9,0,0,1-16.9-7.051,4.016,4.016,0,0,1-18.369-8.8a6.217,6.217,0,0,1-.524-2.582v-1.437a6.261,6.261,0,0,1,.517-2.617,3.967,3.967,0,0,1,1.486-1.76,4.056,4.056,0,0,1,2.234-.62,3.968,3.968,0,0,1,2.811.958,4.015,4.015,0,0,1,1.2,2.655h-.943a2.819,2.819,0,0,0-3.065-2.822,2.91,2.91,0,0,0-2.4,1.126,4.9,4.9,0,0,0-.893,3.114v1.355a4.924,4.924,0,0,0,.871,3.06,2.806,2.806,0,0,0,2.354,1.142,3.12,3.12,0,0,0,2.214-.7,3.38,3.38,0,0,0,.92-2.111Z" transform="translate(18.893 17.813)" fill="#3c3c39"/>
-          </g>
-        </g>
-        <g id="Grupo_77" data-name="Grupo 77" transform="translate(110.178 -29.461)">
-          <path id="Caminho_128" data-name="Caminho 128" d="M0,0V.791H3.787V11.074h.936V.791h3.8V0Z" fill="#3c3c39"/>
-        </g>
-        <g id="Grupo_78" data-name="Grupo 78" transform="translate(121.827 -29.461)">
-          <path id="Caminho_129" data-name="Caminho 129" d="M-5.414,0-9.606,11.074h.981l1.141-3.111h5.028l1.147,3.111h.974L-4.525,0Zm.44,1.141,2.222,6.031H-7.2Z" transform="translate(9.606)" fill="#3c3c39"/>
-        </g>
-      </g>
-    </svg>
+      </svg>
     </ion-title>
-
   </ion-toolbar>
-
-
 </ion-header>
 
 <ion-content>
+<!--  <div class='artesan-content-vertical-align'>-->
+    <ion-grid>
+      <ion-row class='ion-padding-top'>
+        <ion-col>
+          <div>
+            <ion-item>
+              <ion-text class='primary-heading' color='light'>
+                Buscar<br>Artesanato
+              </ion-text>
+            </ion-item>
+          </div>
+          <div class='ion-padding-top'>
+            <div class='ion-text-center ion-padding-top'>
+              <ion-button class='artesan-button-rounded-light' expand='block' fill='outline' size='default'
+                          routerLink='/results'>CÂMERA
+              </ion-button>
+            </div>
 
-  <div class='align-center'>
-    <ion-text color="white" class='primary-heading'>
-      Buscar<br>Artesanato
-    </ion-text>
-  </div>
-
-  <div class='ion-text-center ion-padding-top'>
-    <ion-button class="button-rounded-white"  routerLink="/results" id="camera">Câmera</ion-button>
-  </div>
-
-  <div class='ion-text-center ion-padding-top'>
-    <ion-button class="button-rounded-white"  routerLink="/login" id="galeria">Galeria</ion-button>
-  </div>
-
+            <div class='ion-text-center ion-padding-top'>
+              <ion-button class='artesan-button-rounded-light' expand='block' fill='outline' size='default'
+                          routerLink='/login'>GALERIA
+              </ion-button>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+<!--  </div>-->
 </ion-content>

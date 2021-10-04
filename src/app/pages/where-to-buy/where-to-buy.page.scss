@@ -4,23 +4,25 @@ ion-header {
 
     // For the skip button
     ion-button {
-      --color: var(--ion-color-lightest);
+      --color: var(--ion-color-light);
+    }
+
+    ion-back-button {
+      --color: var(--ion-color-light);
     }
   }
 }
 
 ion-content {
-  // To get the ion-content behind the ion-header
-  //position: absolute;
-  //top: 0;
   --background: #B2ADA4;
 }
 
 ion-header {
   --background: #B2ADA4;
 
+  //height: 30%;
   ion-toolbar {
-    height: 200px;
+    height: 100%;
     --background: #B2ADA4;
 
   }
@@ -31,19 +33,33 @@ ion-list {
 
   ion-item {
     --background: inherit;
-    --border-color: white; // default underline color
-    --highlight-color-invalid: white; // invalid underline color
+    --border-color: var(--ion-color-light); // default underline color
+    --highlight-color-invalid: var(--ion-color-light); // invalid underline color
 
     ion-input {
-      --color: white;
-      font-family: Roboto;
+      --color: var(--ion-color-light);
     }
 
     ion-label {
-      --color: white;
-      font-family: Roboto;
+      --color: var(--ion-color-light);
     }
   }
+}
+
+ion-item {
+  --background: transparent;
+  --border-color: transparent; // default underline color
+  --highlight-color-invalid: var(--ion-color-light); // invalid underline color
+}
+
+.header-logo {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #3C3C39;
+  //padding-top: 60px;
 }
 
 .align-center {
