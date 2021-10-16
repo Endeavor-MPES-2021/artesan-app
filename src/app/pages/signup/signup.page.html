@@ -106,7 +106,7 @@
 
         <div>
           <ion-item>
-            <ion-text class='primary-heading' color='light'>
+            <ion-text class='primary-heading' color='light' id='title'>
               Crie uma<br>Conta
             </ion-text>
           </ion-item>
@@ -119,26 +119,26 @@
             <ion-list>
               <ion-item>
                 <ion-label position='floating'>{{ 'FIRST_NAME' | translate }}</ion-label>
-                <ion-input type='string' [(ngModel)]='account.firstName' name='firstName'></ion-input>
+                <ion-input type='string' [(ngModel)]='account.firstName' name='firstName' id='firstName'></ion-input>
               </ion-item>
 
               <ion-item>
                 <ion-label position='floating'>{{ 'LAST_NAME' | translate }}</ion-label>
-                <ion-input type='string' [(ngModel)]='account.lastName' name='lastName'></ion-input>
+                <ion-input type='string' [(ngModel)]='account.lastName' name='lastName' id='lastName'></ion-input>
               </ion-item>
 
               <ion-item>
                 <ion-label position='floating'>{{ 'EMAIL' | translate }}</ion-label>
-                <ion-input type='email' [(ngModel)]='account.email' name='email'></ion-input>
+                <ion-input type='email' [(ngModel)]='account.email' name='email' id='email'></ion-input>
               </ion-item>
 
               <ion-item>
                 <ion-label position='floating'>{{ 'PASSWORD' | translate }}</ion-label>
-                <ion-input type='password' [(ngModel)]='account.password' name='password'></ion-input>
+                <ion-input type='password' [(ngModel)]='account.password' name='password' id='password'></ion-input>
               </ion-item>
 
               <div class='ion-text-center ion-padding-top'>
-                <ion-button class='artesan-button-rounded-dark' expand="block" fill="outline" size='default' id='login'
+                <ion-button class='artesan-button-rounded-dark' expand="block" fill="outline" size='default' id='cadastrar'
                             type='submit'>CRIAR
                 </ion-button>
               </div>
