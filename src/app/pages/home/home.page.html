@@ -87,13 +87,15 @@
           <div class='ion-padding-top'>
             <div class='ion-text-center ion-padding-top'>
               <ion-button class='artesan-button-rounded-light' expand='block' fill='outline' size='default'
-                          routerLink='/results'>CÂMERA
+                          (click)="getPicture('arquivo')">CÂMERA
               </ion-button>
             </div>
 
+            <input type="file" #fileInput style="display: none" (change)="setFileData($event, 'arquivo', true)" accept="image/*" />
+
             <div class='ion-text-center ion-padding-top'>
               <ion-button class='artesan-button-rounded-light' expand='block' fill='outline' size='default'
-                          routerLink='/login'>GALERIA
+                          (click)="getGalery('arquivo')">GALERIA
               </ion-button>
             </div>
           </div>

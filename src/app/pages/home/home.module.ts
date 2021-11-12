@@ -6,6 +6,8 @@ import { IonicModule } from '@ionic/angular';
 import { TranslateModule } from '@ngx-translate/core';
 import { UserRouteAccessService } from 'src/app/services/auth/user-route-access.service';
 import { HomePage } from './home.page';
+import { Camera } from '@ionic-native/camera/ngx';
+
 
 const routes: Routes = [
   {
@@ -21,5 +23,6 @@ const routes: Routes = [
 @NgModule({
   imports: [IonicModule, CommonModule, FormsModule, TranslateModule, RouterModule.forChild(routes)],
   declarations: [HomePage],
+  providers: [Camera],
 })
 export class HomePageModule {}

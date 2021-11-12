@@ -1,0 +1,32 @@
+version: "3"
+services:
+  dualbike-pjtst202100012:
+    image: gitlab.otimizeit.com.br:5005/dualbike-33947743000122/pjtst202100012
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=proxy"
+      - "traefik.http.routers.dualbike-pjtst202100012-secure.entrypoints=websecure"
+      - "traefik.http.routers.dualbike-pjtst202100012-secure.rule=Host(`bikedasorte.com.br`, `www.bikedasorte.com.br`)"
+      - "traefik.http.services.dualbike-pjtst202100012-secure.loadbalancer.server.port=80"
+    ports:
+      - "80:8080"
+    volumes:
+      #- /var/run/docker.sock:/var/run/docker.sock
+      - 'dualbike-pjtst202100012_data:/usr/share/nginx/html'
+
+volumes:
+  mongodb_data:
+    driver: local
+  parse_data:
+    driver: local
+  parse_dashboard_data:
+    driver: local
+  n8n_data:
+    driver: local
+
+
+networks:
+  proxy:
+    external: true
