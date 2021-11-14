@@ -53,8 +53,8 @@
   "SIGNUP_TITLE": "Cadastre-se",
   "SIGNUP_ERROR": "Não foi possível criar sua conta. Verifique seus dados e tente novamente.",
   "SIGNUP_SUCCESS": "Registro salvo! Por favor, verifique seu e-mail para confirmação.",
-  "EXISTING_USER_ERROR": "Email is already in use! Please choose another one.",
-  "INVALID_PASSWORD_ERROR": "Invalid password, please try again.",
+  "EXISTING_USER_ERROR": "O e-mail já está sendo usado! Por favor escolha outro.",
+  "INVALID_PASSWORD_ERROR": "Senha inválida, por favor tente novamente.",
   "SIGNUP_BUTTON": "Cadastre-se",
 
   "LIST_MASTER_TITLE": "Itens",
