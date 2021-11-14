@@ -91,7 +91,9 @@
               </ion-button>
             </div>
 
-            <input type="file" #fileInput style="display: none" (change)="setFileData($event, 'arquivo', true)" accept="image/*" />
+            <form style="display: none" *ngIf="form" name="form">
+              <input type="file" #fileInput style="display: none" (change)="setFileData($event, 'arquivo', true)" accept="image/*" />
+            </form>
 
             <div class='ion-text-center ion-padding-top'>
               <ion-button class='artesan-button-rounded-light' expand='block' fill='outline' size='default'

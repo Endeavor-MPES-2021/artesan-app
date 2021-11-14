@@ -3,6 +3,9 @@ import { NavController } from '@ionic/angular';
 import { AccountService } from 'src/app/services/auth/account.service';
 import { LoginService } from 'src/app/services/login/login.service';
 import { Account } from 'src/model/account.model';
+import { Router } from '@angular/router';
+import { ApiService } from '../../services/api/api.service';
+import { HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-results',
@@ -11,22 +14,19 @@ import { Account } from 'src/model/account.model';
 })
 export class ResultsPage implements OnInit {
   account: Account;
+  obras: {};
 
-  constructor(public navController: NavController, private accountService: AccountService, private loginService: LoginService) {}
+  constructor(public router: Router, public navController: NavController, private accountService: AccountService,
+              private loginService: LoginService) {
 
-  ngOnInit() {
-    this.accountService.identity().then((account) => {
-      if (account === null) {
-        this.goBackToHomePage();
-      } else {
-        this.account = account;
-      }
-    });
+    if (router.getCurrentNavigation().extras.state) {
+      const predictionResult = this.router.getCurrentNavigation().extras.state;
+      this.obras = predictionResult;
+    }
   }
 
-  isAuthenticated() {
-    return this.accountService.isAuthenticated();
-  }
+  ngOnInit() {}
+
 
   logout() {
     this.loginService.logout();
@@ -36,4 +36,5 @@ export class ResultsPage implements OnInit {
   private goBackToHomePage(): void {
     this.navController.navigateBack('');
   }
+
 }

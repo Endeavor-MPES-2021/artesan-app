@@ -98,19 +98,21 @@
 
           <div class='ion-padding-top'>
               <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
-                <ion-slide routerLink='/craftwork' *ngFor="let card of [0,1,2,3,4,5,6]" style="width: 136px; height: 297px; border: 2px solid #f8f8f8">
+                <ion-slide routerLink='/craftwork' routerDirection='forward' [state]="card" *ngFor="let card of obras" style="width: 136px; height: 297px; border: 2px solid #f8f8f8">
                   <ion-col class='artensan-slide-card ion-no-padding '>
                     <div class='artensan-slide-image ion-no-padding'>
-                      <ion-img style="height:100%; pointer-events:none" src="https://via.placeholder.com/150"></ion-img>
+                      <img [src]="card.fotoDeCapaDaObraUrl" />
+
+<!--                      <ion-img style="height:100%; pointer-events:none" src="https://via.placeholder.com/150"></ion-img>-->
                     </div>
                     <div class='align-center artensan-slide-card-text1 ion-no-padding'>
-                      <ion-label color='light'>85%</ion-label>
+                      <ion-label color='light'>{{ card.probability | number }}%</ion-label>
                     </div>
                     <div class='ion-text-left artensan-slide-card-text2 ion-padding-start ion-padding-top'>
-                      <ion-text>OBRA DE ARTESANATO</ion-text>
+                      <ion-text>{{ card.nomeDaObra }}</ion-text>
                     </div>
                     <div class='ion-text-left artensan-slide-card-text3 ion-padding-start ion-padding-top'>
-                      <ion-text>ARTESÃO: NOME DO ARTESÃO</ion-text>
+                      <ion-text>ARTESÃO: {{ card.nomeDoArtesao }}</ion-text>
                     </div>
                   </ion-col>
                 </ion-slide>

@@ -3,7 +3,11 @@ import { NavController } from '@ionic/angular';
 import { AccountService } from 'src/app/services/auth/account.service';
 import { LoginService } from 'src/app/services/login/login.service';
 import { Account } from 'src/model/account.model';
-import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { Camera, CameraOptions, PictureSourceType } from '@ionic-native/camera/ngx';
+import { ApiService } from '../../services/api/api.service';
+import { JhiDataUtils } from '../../services/utils/data-util.service';
+import { FormBuilder, FormControl } from '@angular/forms';
+import { LoadingController } from '@ionic/angular';
 
 
 @Component({
@@ -13,12 +17,23 @@ import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
 })
 export class HomePage implements OnInit {
   account: Account;
+
   cameraOptions1: CameraOptions;
   cameraOptions2: CameraOptions;
   @ViewChild('fileInput', { static: false }) fileInput;
 
+  form = this.formBuilder.group({
+    arquivo: [],
+  });
 
-  constructor(public navController: NavController, private accountService: AccountService, private loginService: LoginService, private camera: Camera) {
+  private loading: HTMLIonLoadingElement;
+
+
+  constructor(public navController: NavController, private accountService: AccountService,
+              private dataUtils: JhiDataUtils,
+              protected formBuilder: FormBuilder,
+              public loadingController: LoadingController,
+              private loginService: LoginService, private camera: Camera, private apiService: ApiService) {
     // Set the Camera options
     this.cameraOptions1 = {
       quality: 100,
@@ -27,9 +42,9 @@ export class HomePage implements OnInit {
       destinationType: this.camera.DestinationType.DATA_URL,
       encodingType: this.camera.EncodingType.JPEG,
       mediaType: this.camera.MediaType.PICTURE,
-      saveToPhotoAlbum: true,
+      // saveToPhotoAlbum: true,
       allowEdit: true,
-      sourceType: 1,
+      sourceType: this.camera.PictureSourceType.CAMERA,
     };
 
     this.cameraOptions2 = {
@@ -41,7 +56,7 @@ export class HomePage implements OnInit {
       mediaType: this.camera.MediaType.PICTURE,
       saveToPhotoAlbum: true,
       allowEdit: true,
-      sourceType: 0,
+      sourceType: this.camera.PictureSourceType.PHOTOLIBRARY,
     };
   }
 
@@ -69,12 +84,26 @@ export class HomePage implements OnInit {
   }
 
   getPicture(fieldName) {
-    this.navController.navigateForward('/results');
+    if (Camera.installed()) {
+      this.camera.getPicture(this.cameraOptions1).then(
+        (data) => {
+          this.apiService.post('classifyImage', data, { responseType: 'json' as 'json' }).subscribe(
+            (resultado) => {
+              this.navController.navigateForward('/results', { state: resultado });
+            });
+        },
+        (err) => {
+          alert('Erro no carregamento da imagem');
+        }
+      );
+    } else {
+      this.fileInput.nativeElement.click();
+    }
   }
 
   getGalery(fieldName) {
     if (Camera.installed()) {
-      this.camera.getPicture(this.cameraOptions1).then(
+      this.camera.getPicture(this.cameraOptions2).then(
         (data) => {
           this.navController.navigateForward('/results');
         },
@@ -88,8 +117,32 @@ export class HomePage implements OnInit {
   }
 
   setFileData(event, field, isImage) {
-    // this.dataUtils.loadFileToForm(event, this.form, field, isImage).subscribe();
-    // this.processWebImage(event, field);
-    this.navController.navigateForward('/results');
+
+    this.presentLoading();
+
+    this.dataUtils.loadFileToForm(event, this.form, field, isImage).subscribe();
+
+    this.form.get("arquivo").valueChanges.subscribe(selectedValue => {
+      this.apiService.post('classifyImage', selectedValue, { responseType: 'json' as 'json' }).subscribe(
+        (resultado) => {
+          this.dimissLoading();
+          this.navController.navigateForward('/results', { state: resultado });
+        });
+    });
+  }
+
+  async presentLoading() {
+    this.loading = await this.loadingController.create({
+      cssClass: 'my-custom-class',
+      message: 'Aguarde...'
+    });
+    await this.loading.present();
+
+    const { role, data } = await this.loading.onDidDismiss();
+    console.log('Loading dismissed!');
+  }
+
+  async dimissLoading() {
+    await this.loading.dismiss();
   }
 }
