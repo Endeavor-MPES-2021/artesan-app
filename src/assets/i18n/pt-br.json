@@ -52,7 +52,7 @@
   "LOGIN_BUTTON": "Entrar",
   "SIGNUP_TITLE": "Cadastre-se",
   "SIGNUP_ERROR": "Não foi possível criar sua conta. Verifique seus dados e tente novamente.",
-  "SIGNUP_SUCCESS": "Registration saved! Please check your email for confirmation.",
+  "SIGNUP_SUCCESS": "Registro salvo! Por favor, verifique seu e-mail para confirmação.",
   "EXISTING_USER_ERROR": "Email is already in use! Please choose another one.",
   "INVALID_PASSWORD_ERROR": "Invalid password, please try again.",
   "SIGNUP_BUTTON": "Cadastre-se",
