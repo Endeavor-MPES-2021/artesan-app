@@ -1,0 +1,18 @@
+import { BaseEntity } from 'src/model/base-entity';
+
+export class Predicao implements BaseEntity {
+  constructor(
+    public id?: any,
+    public probability?: number,
+    public tagId?: string,
+    public tagName?: string,
+    public nomeDaObra?: string,
+    public nomeDoArtesao?: string,
+    public fotoDeCapaDaObraUrl?: string,
+    public dimensao?: string,
+    public origem?: string,
+    public descricaoDaObra?: string,
+    public descricaoDoArtesao?: string,
+  ) {
+  }
+}

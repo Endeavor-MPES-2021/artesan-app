@@ -98,7 +98,7 @@
 
           <div class='ion-padding-top'>
               <ion-slides [options]="{ slidesPerView: 'auto', zoom: false, grabCursor: true }">
-                <ion-slide routerLink='/craftwork' routerDirection='forward' [state]="card" *ngFor="let card of obras" style="width: 136px; height: 297px; border: 2px solid #f8f8f8">
+                <ion-slide routerLink='/craftwork' routerDirection='forward' [state]="{predicao: card}" *ngFor="let card of predicoes" style="width: 136px; height: 297px; border: 2px solid #f8f8f8">
                   <ion-col class='artensan-slide-card ion-no-padding '>
                     <div class='artensan-slide-image ion-no-padding'>
                       <img [src]="card.fotoDeCapaDaObraUrl" />

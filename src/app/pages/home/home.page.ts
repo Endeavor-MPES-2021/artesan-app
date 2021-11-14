@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
 import { AccountService } from 'src/app/services/auth/account.service';
 import { LoginService } from 'src/app/services/login/login.service';
 import { Account } from 'src/model/account.model';
@@ -8,6 +8,10 @@ import { ApiService } from '../../services/api/api.service';
 import { JhiDataUtils } from '../../services/utils/data-util.service';
 import { FormBuilder, FormControl } from '@angular/forms';
 import { LoadingController } from '@ionic/angular';
+import { PredicaoService } from '../../services/predicao.service';
+import { HttpErrorResponse, HttpResponse } from '@angular/common/http';
+import { Predicao } from '../../../model/predicao.model';
+import { filter, map } from 'rxjs/operators';
 
 
 @Component({
@@ -33,6 +37,8 @@ export class HomePage implements OnInit {
               private dataUtils: JhiDataUtils,
               protected formBuilder: FormBuilder,
               public loadingController: LoadingController,
+              private toastCtrl: ToastController,
+              public predicaoService: PredicaoService,
               private loginService: LoginService, private camera: Camera, private apiService: ApiService) {
     // Set the Camera options
     this.cameraOptions1 = {
@@ -117,17 +123,33 @@ export class HomePage implements OnInit {
   }
 
   setFileData(event, field, isImage) {
-
     this.presentLoading();
-
     this.dataUtils.loadFileToForm(event, this.form, field, isImage).subscribe();
-
     this.form.get("arquivo").valueChanges.subscribe(selectedValue => {
-      this.apiService.post('classifyImage', selectedValue, { responseType: 'json' as 'json' }).subscribe(
-        (resultado) => {
+
+    this.predicaoService
+      .classifyImage(selectedValue)
+      .pipe(
+        filter((response: HttpResponse<Predicao[]>) => response.ok),
+        map((obra: HttpResponse<Predicao[]>) => obra.body)
+    ).subscribe(
+        (response: Predicao[]) => {
           this.dimissLoading();
-          this.navController.navigateForward('/results', { state: resultado });
-        });
+          this.navController.navigateForward('/results', { state: {predicoes: response} });
+        },
+        async (error) => {
+          console.error(error);
+          const toast = await this.toastCtrl.create({ message: 'Failed to load data', duration: 2000, position: 'middle' });
+          await toast.present();
+        }
+      );
+
+      //
+      // this.apiService.post('classifyImage', selectedValue, { responseType: 'json' as 'json' }).subscribe(
+      //   (resultado) => {
+      //     this.dimissLoading();
+      //     this.navController.navigateForward('/results', { state: resultado });
+      //   });
     });
   }
 

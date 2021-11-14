@@ -6,6 +6,7 @@ import { Account } from 'src/model/account.model';
 import { Router } from '@angular/router';
 import { ApiService } from '../../services/api/api.service';
 import { HttpParams } from '@angular/common/http';
+import { Predicao } from '../../../model/predicao.model';
 
 @Component({
   selector: 'app-results',
@@ -14,14 +15,13 @@ import { HttpParams } from '@angular/common/http';
 })
 export class ResultsPage implements OnInit {
   account: Account;
-  obras: {};
+  predicoes: Predicao[];
 
   constructor(public router: Router, public navController: NavController, private accountService: AccountService,
               private loginService: LoginService) {
 
     if (router.getCurrentNavigation().extras.state) {
-      const predictionResult = this.router.getCurrentNavigation().extras.state;
-      this.obras = predictionResult;
+      this.predicoes = this.router.getCurrentNavigation().extras.state.predicoes;
     }
   }
 
