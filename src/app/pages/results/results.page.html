@@ -106,7 +106,7 @@
 <!--                      <ion-img style="height:100%; pointer-events:none" src="https://via.placeholder.com/150"></ion-img>-->
                     </div>
                     <div class='align-center artensan-slide-card-text1 ion-no-padding'>
-                      <ion-label color='light'>{{ card.probability | number }}%</ion-label>
+                      <ion-label color='light'>{{ card.probability | number : '1.0-2'}}%</ion-label>
                     </div>
                     <div class='ion-text-left artensan-slide-card-text2 ion-padding-start ion-padding-top'>
                       <ion-text>{{ card.nomeDaObra }}</ion-text>
