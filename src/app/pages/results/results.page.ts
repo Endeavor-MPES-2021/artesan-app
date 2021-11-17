@@ -22,6 +22,7 @@ export class ResultsPage implements OnInit {
 
     if (router.getCurrentNavigation().extras.state) {
       this.predicoes = this.router.getCurrentNavigation().extras.state.predicoes;
+      console.log(this.predicoes);
     }
   }
 

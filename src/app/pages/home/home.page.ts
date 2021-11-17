@@ -143,13 +143,6 @@ export class HomePage implements OnInit {
           await toast.present();
         }
       );
-
-      //
-      // this.apiService.post('classifyImage', selectedValue, { responseType: 'json' as 'json' }).subscribe(
-      //   (resultado) => {
-      //     this.dimissLoading();
-      //     this.navController.navigateForward('/results', { state: resultado });
-      //   });
     });
   }
 
