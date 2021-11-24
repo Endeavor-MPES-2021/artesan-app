@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'where-to-buy', loadChildren: './pages/where-to-buy/where-to-buy.module#WhereToBuyPageModule' },
   { path: 'craftsman', loadChildren: './pages/craftsman/craftsman.module#CraftsmanPageModule' },
   { path: 'craftwork', loadChildren: './pages/craftwork/craftwork.module#CraftworkPageModule' },
+  { path: 'where-to-buy-details', loadChildren: './pages/where-to-buy-details/where-to-buy-details.module#WhereToBuyDetailsPageModule' },
   { path: 'tabs', loadChildren: './pages/tabs/tabs.module#TabsPageModule' },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'signup', loadChildren: './pages/signup/signup.module#SignupPageModule' },

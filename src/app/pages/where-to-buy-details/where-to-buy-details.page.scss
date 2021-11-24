@@ -1,0 +1,126 @@
+ion-header {
+  ion-toolbar {
+    --ion-toolbar-background: transparent;
+
+    // For the skip button
+    ion-button {
+      --color: var(--ion-color-light);
+    }
+
+    ion-back-button {
+      --color: var(--ion-color-light);
+    }
+  }
+}
+
+ion-content {
+  --background: #3C3C39;
+  position: absolute;
+  top: 0;
+}
+
+//ion-header {
+//  height: 30%;
+//  ion-toolbar {
+//    height: 100%;
+//    background: url('../../../assets/img/bolas.png') no-repeat center/100%;
+//  }
+//}
+
+ion-item {
+  --background: transparent;
+  --border-color: transparent; // default underline color
+  --highlight-color-invalid: var(--ion-color-light); // invalid underline color
+}
+
+.header-logo {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //background: url('../../../assets/img/cachorr_app.png') no-repeat center/100%;
+
+  //padding-top: 60px;
+}
+
+.align-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.primary-heading {
+  font-family: Roboto;
+  font-size: 25pt;
+  font-weight: bold;
+}
+
+.secundary-heading {
+  font-family: Roboto;
+  font-size: 24pt;
+  font-weight: bold;
+}
+
+.section-header {
+  font-family: Roboto;
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-family: Roboto;
+  font-size: 10pt;
+}
+
+.button-rounded-white {
+  --border-radius: 50px;
+  --background: #FFFFFF;
+  --color: #1B1C20;
+  --box-shadow: 0px 20px 50px #0000004D;
+  font-size: 14pt;
+  font-weight: lighter;
+  height: 49px;
+  width: 186px;
+}
+
+.ion-item-button-squared {
+  --background: #B2ADA4;
+  --color: #FFFFFF;
+  --border-style: none;
+  --min-height: 70px;
+  font-size: 14pt;
+  font-weight: lighter;
+}
+
+
+//.button-squared {
+//  --background: #B2ADA4;
+//  --color: #FFFFFF;
+//  font-size: 14pt;
+//  font-weight: lighter;
+//  height: 70px;
+//}
+
+.artensan-craftwork-content2 {
+  background: #FFFFFF;
+  height: 400px;
+}
+
+.artensan-craftwork-content2-subtitle {
+  font-size: 10pt;
+  color: #000000;
+}
+
+.artesan-button-rounded-light {
+  --border-radius: 50px;
+  --border-width: 1px;
+  --border-color: #B2ADA4;
+  --border-style: solid;
+  --box-shadow: 0px 20px 50px #0000004D;
+  --background: var(--ion-color-light);
+  --color: #1B1C20;
+  font-size: 14pt;
+  font-weight: lighter;
+}

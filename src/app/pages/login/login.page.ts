@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NavController, ToastController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { LoginService } from 'src/app/services/login/login.service';
+import { AccountService } from '../../services/auth/account.service';
 
 @Component({
   selector: 'app-login',
@@ -23,12 +24,20 @@ export class LoginPage implements OnInit {
     public translateService: TranslateService,
     public loginService: LoginService,
     public toastController: ToastController,
-    public navController: NavController
+    public navController: NavController,
+    private accountService: AccountService
   ) {}
 
   ngOnInit() {
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
       this.loginErrorString = value;
+    });
+
+    this.accountService.identity().then((account) => {
+      if (account !== null) {
+        this.account = account;
+        this.navController.navigateRoot('/tabs');
+      }
     });
   }
 
@@ -48,5 +57,9 @@ export class LoginPage implements OnInit {
         toast.present();
       }
     );
+  }
+
+  private goBackToHomePage(): void {
+    this.navController.navigateBack('');
   }
 }

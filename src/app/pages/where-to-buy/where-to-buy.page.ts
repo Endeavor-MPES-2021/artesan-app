@@ -3,6 +3,8 @@ import { NavController } from '@ionic/angular';
 import { AccountService } from 'src/app/services/auth/account.service';
 import { LoginService } from 'src/app/services/login/login.service';
 import { Account } from 'src/model/account.model';
+import { Predicao } from '../../../model/predicao.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-where-to-buy',
@@ -11,8 +13,16 @@ import { Account } from 'src/model/account.model';
 })
 export class WhereToBuyPage implements OnInit {
   account: Account;
+  predicao: Predicao;
 
-  constructor(public navController: NavController, private accountService: AccountService, private loginService: LoginService) {}
+  constructor(public router: Router,
+              public navController: NavController, private accountService: AccountService,
+              private loginService: LoginService) {
+    if (router.getCurrentNavigation().extras.state) {
+      this.predicao = this.router.getCurrentNavigation().extras.state.predicao;
+      console.log(this.predicao);
+    }
+  }
 
   ngOnInit() {
     this.accountService.identity().then((account) => {

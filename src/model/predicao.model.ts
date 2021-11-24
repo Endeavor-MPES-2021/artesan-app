@@ -1,4 +1,5 @@
 import { BaseEntity } from 'src/model/base-entity';
+import { Lojista } from './lojista.model';
 
 export class Predicao implements BaseEntity {
   constructor(
@@ -14,7 +15,8 @@ export class Predicao implements BaseEntity {
     public origem?: string,
     public descricaoDaObra?: string,
     public descricaoDoArtesao?: string,
-    public variacaoDePreco?: string
-  ) {
+    public variacaoDePreco?: string,
+    public lojistas?: Lojista[]
+) {
   }
 }

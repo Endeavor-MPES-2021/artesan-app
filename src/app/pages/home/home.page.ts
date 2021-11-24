@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NavController, ToastController } from '@ionic/angular';
 import { AccountService } from 'src/app/services/auth/account.service';
 import { LoginService } from 'src/app/services/login/login.service';
@@ -39,7 +39,10 @@ export class HomePage implements OnInit {
               public loadingController: LoadingController,
               private toastCtrl: ToastController,
               public predicaoService: PredicaoService,
-              private loginService: LoginService, private camera: Camera, private apiService: ApiService) {
+              private elementRef: ElementRef,
+              private loginService: LoginService,
+              private camera: Camera,
+              private apiService: ApiService) {
     // Set the Camera options
     this.cameraOptions1 = {
       quality: 100,
@@ -74,6 +77,7 @@ export class HomePage implements OnInit {
         this.account = account;
       }
     });
+    this.clearInputImage();
   }
 
   isAuthenticated() {
@@ -139,7 +143,7 @@ export class HomePage implements OnInit {
         },
         async (error) => {
           console.error(error);
-          const toast = await this.toastCtrl.create({ message: 'Failed to load data', duration: 2000, position: 'middle' });
+          const toast = await this.toastCtrl.create({ message: 'Ocorreu um erro na operação de reconhecimento', duration: 2000, position: 'middle' });
           await toast.present();
         }
       );
@@ -148,16 +152,17 @@ export class HomePage implements OnInit {
 
   async presentLoading() {
     this.loading = await this.loadingController.create({
-      cssClass: 'my-custom-class',
       message: 'Aguarde...'
     });
     await this.loading.present();
-
-    const { role, data } = await this.loading.onDidDismiss();
-    console.log('Loading dismissed!');
   }
 
   async dimissLoading() {
     await this.loading.dismiss();
+  }
+
+  clearInputImage() {
+    //this.dataUtils.clearInputImage(this.obra, this.elementRef, field, fieldContentType, idInput);
+    this.form.patchValue({ ['arquivo']: '' });
   }
 }

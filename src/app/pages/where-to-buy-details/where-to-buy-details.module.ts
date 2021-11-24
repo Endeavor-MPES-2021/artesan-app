@@ -4,13 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 import { TranslateModule } from '@ngx-translate/core';
-import { CraftsmanPage } from './craftsman.page';
+import { WhereToBuyDetailsPage } from './where-to-buy-details.page';
 import { UserRouteAccessService } from '../../services/auth/user-route-access.service';
 
 const routes: Routes = [
   {
     path: '',
-    component: CraftsmanPage,
+    component: WhereToBuyDetailsPage,
     data: {
       authorities: ['ROLE_USER'],
     },
@@ -20,6 +20,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [IonicModule, CommonModule, FormsModule, RouterModule.forChild(routes), TranslateModule],
-  declarations: [CraftsmanPage],
+  declarations: [WhereToBuyDetailsPage],
 })
-export class CraftsmanPageModule {}
+export class WhereToBuyDetailsPageModule {}

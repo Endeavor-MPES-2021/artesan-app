@@ -126,8 +126,8 @@
   "cordova": {
     "plugins": {
       "cordova-plugin-camera": {
-        "CAMERA_USAGE_DESCRIPTION": "Need camera access to take pictures",
-        "PHOTOLIBRARY_USAGE_DESCRIPTION": "Need photo library access to get pictures from there"
+        "CAMERA_USAGE_DESCRIPTION": "É necessário acesso a câmera para esse recurso",
+        "PHOTOLIBRARY_USAGE_DESCRIPTION": "É necessário acesso a galeria de imagens para esse recurso"
       }
     }
   }

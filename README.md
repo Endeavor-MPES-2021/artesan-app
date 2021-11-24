@@ -153,6 +153,12 @@ To run the e2e tests:
 npm run e2e
 ```
 
+```bash
+ng build --prod
+docker build -t otimizeit/artesanapp:latest .
+docker push otimizeit/artesanapp:latest
+```
+
 Apache-2.0 © [Okta](https://developer.okta.com/)
 
 [travis-image]: https://travis-ci.org/oktadeveloper/ionic-jhipster-starter.svg?branch=master

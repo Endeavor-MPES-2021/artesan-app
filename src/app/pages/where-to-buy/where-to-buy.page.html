@@ -92,11 +92,11 @@
         <div class='ion-padding-top'>
 
           <div class="container">
-            <ion-card style='height: 145px' class="category-card" *ngFor="let card of [0,1,2,3,4,5,6]">
-              <img style='position: absolute' src="https://img.mobiscroll.com/demos/card_6.png">
+            <ion-card routerLink='/where-to-buy-details' routerDirection='forward' [state]="{lojista: card}" style='height: 145px' class="category-card" *ngFor="let card of predicao.lojistas">
+              <img style='position: absolute' [src]="card.fotoDeCapaUrl">
               <ion-card-header>
                 <ion-card-title color='light'>
-                  Titulo
+                  {{ card.nome }}
                 </ion-card-title>
               </ion-card-header>
             </ion-card>
