@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content fullscreen='true'>
-  <ion-grid>
+  <ion-grid [fixed]='true'>
     <ion-row class='ion-padding-bottom'>
       <div class='header-logo'>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="214.478" height="121.948" viewBox="0 0 214.478 121.948">
@@ -64,9 +64,8 @@
       </div>
     </ion-row>
 
-    <ion-row class='ion-padding-top'>
+    <ion-row class='ion-padding-top' style='height: 400px'>
       <ion-col>
-
         <div class='ion-padding-bottom'>
           <ion-item>
             <ion-text class='primary-heading' color='light'>

@@ -6,7 +6,6 @@ import { LoginService } from '../../services/login/login.service';
 import { ApiService } from '../../services/api/api.service';
 import { Predicao } from '../../../model/predicao.model';
 import { Lojista } from '../../../model/lojista.model';
-import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 @Component({
   selector: 'app-where-to-buy-details',
@@ -17,13 +16,11 @@ export class WhereToBuyDetailsPage implements OnInit {
   lojista: Lojista;
 
   constructor(public router: Router, public navController: NavController,
-              private apiService: ApiService, private iab: InAppBrowser) {
+              private apiService: ApiService) {
 
     if (router.getCurrentNavigation().extras.state) {
       this.lojista = this.router.getCurrentNavigation().extras.state.lojista;
     }
-
-    const browser = this.iab.create('https://ionicframework.com/');
   }
 
   ngOnInit() {

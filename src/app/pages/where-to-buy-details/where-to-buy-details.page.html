@@ -12,7 +12,7 @@
   <ion-grid >
 
     <ion-row class='ion-padding-bottom'>
-      <div class='header-logo' style="background: url({{ lojista.fotoDeCapaUrl }}) no-repeat center/100%">
+      <div class='header-logo' style="background: url({{ lojista.fotoDeCapaUrl }}) no-repeat center/100% 100%">
       </div>
     </ion-row>
 
@@ -34,50 +34,54 @@
       </ion-col>
     </ion-row>
 
+    <ion-row>
+      <ion-item detail='false' class='ion-item-button-squared' id='comprar' routerLink='/where-to-buy'>
+        <ion-label>
+          {{ lojista.marketplaceUrl }}
+        </ion-label>
+        <ion-icon style='border: 1px; border-color: black' name='chevron-forward-outline' slot='end'
+                  style='height: 100%'></ion-icon>
+      </ion-item>
+    </ion-row>
+
     <ion-row class='ion-padding-top ion-padding-bottom artensan-craftwork-content2'>
       <ion-col>
             <div class='ion-text-left artensan-slide-card-text2 ion-padding-top ion-padding-start'>
               <ion-text class='artensan-craftwork-content2-subtitle' color='light'>
-                Teste
-              </ion-text>
-            </div>
-
-            <div class='ion-text-left artensan-slide-card-text2 ion-padding-top ion-padding-start'>
-              <ion-text class='artensan-craftwork-content2-subtitle' color='light'>
-                DIMENSÕES
+                WHATSAPP
               </ion-text>
             </div>
             <div class='ion-text-left artensan-slide-card-text2 ion-padding-start'>
               <ion-text class='artensan-craftwork-content2-subtitle' color='light'>
-                Teste
-<!--                25 x 10 x 50cm (A x L x C)-->
+                {{ lojista.telefone }}
               </ion-text>
             </div>
 
           <div class='ion-text-left artensan-slide-card-text2 ion-padding-top ion-padding-start'>
             <ion-text class='artensan-craftwork-content2-subtitle' color='light'>
-              ORIGEM
+              ENDEREÇO
             </ion-text>
           </div>
           <div class='ion-text-left artensan-slide-card-text2 ion-padding-start'>
             <ion-text class='artensan-craftwork-content2-subtitle' color='light'>
-              Teste
+              {{ lojista.logradouro }}, {{ lojista.numero }} - {{ lojista.cep }} <br>
+              {{ lojista.cidade }}/ {{ lojista.estado }}
             </ion-text>
           </div>
 
           <div class='ion-text-left artensan-slide-card-text2 ion-padding-top ion-padding-start'>
             <ion-text class='artensan-craftwork-content2-subtitle' color='light'>
-              ARTESÃO
+              E-MAIL
             </ion-text>
           </div>
           <div class='ion-text-left artensan-slide-card-text2 ion-padding-start'>
             <ion-text class='artensan-craftwork-content2-subtitle' color='light'>
-              Teste
+              {{ lojista.email }}
             </ion-text>
           </div>
 
         <div class='ion-text-center ion-padding-top'>
-          <ion-button class='artesan-button-rounded-light' expand="block" fill="outline" size='default' id='sobre' href="window.open('https://www.google.com/', '_system', 'location=yes');">LINK PARA COMPRA</ion-button>
+          <ion-button class='artesan-button-rounded-light' expand="block" fill="outline" size='default' id='sobre' href="window.open('https://www.google.com/', '_system', 'location=yes');">COMPRAR</ion-button>
         </div>
 
       </ion-col>
