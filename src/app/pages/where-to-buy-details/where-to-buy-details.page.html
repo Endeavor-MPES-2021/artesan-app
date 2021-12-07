@@ -21,13 +21,13 @@
         <div class='ion-padding-bottom'>
           <ion-item>
             <ion-text class='primary-heading' color='light' id='title'>
-              {{ lojista.nome }}
+              {{ lojista.nome | slice:0:27}}
             </ion-text>
           </ion-item>
 
           <ion-item>
             <ion-text class='subtitle' color='light' id='preco'>
-              E-MAIL: {{ lojista.email }}
+              E-MAIL: {{ lojista.email | slice:0:27}}
             </ion-text>
           </ion-item>
         </div>

@@ -80,7 +80,7 @@
               <img style='position: absolute' [src]="card.fotoDeCapaUrl">
               <ion-card-header>
                 <ion-card-title color='light'>
-                  {{ card.nome }}
+                  {{ card.nome | slice:0:19}}
                 </ion-card-title>
               </ion-card-header>
             </ion-card>

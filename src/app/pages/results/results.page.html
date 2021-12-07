@@ -93,10 +93,10 @@
                       <ion-label color='light'>{{ card.probability | number : '1.0-2'}}%</ion-label>
                     </div>
                     <div class='ion-text-left artensan-slide-card-text2 ion-padding-start ion-padding-top'>
-                      <ion-text>{{ card.nomeDaObra }}</ion-text>
+                      <ion-text>{{ card.nomeDaObra | slice:0:27 }}</ion-text>
                     </div>
                     <div class='ion-text-left artensan-slide-card-text3 ion-padding-start ion-padding-top'>
-                      <ion-text>ARTESÃO: {{ card.nomeDoArtesao }}</ion-text>
+                      <ion-text>ARTESÃO: {{ card.nomeDoArtesao | slice:0:27 }}</ion-text>
                     </div>
                   </ion-col>
                 </ion-slide>

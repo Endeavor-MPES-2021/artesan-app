@@ -87,19 +87,63 @@
         </div>
 
         <div class='ion-padding-top'>
-          <form (submit)='doLogin()' class='login-form'>
+          <form (submit)='doLogin()' [formGroup]="loginForm" class='login-form'>
             <ion-list>
               <ion-item>
                 <ion-label position='floating'>{{ 'USERNAME' | translate }}</ion-label>
-                <ion-input [(ngModel)]='account.username' name='username' type='string' id='username'></ion-input>
+                <ion-input #username formControlName="username" name='username' type='string' id='username'></ion-input>
               </ion-item>
+              <div *ngIf="loginForm.get('username')!.invalid && (loginForm.get('username')!.dirty || loginForm.get('username')!.touched)">
+                <small
+                  class="form-text error"
+                  *ngIf="loginForm.get('username')?.errors?.required"
+                >
+                  O campo usuário é obrigatório.
+                </small>
+
+                <small
+                  class="form-text error"
+                  *ngIf="loginForm.get('username')?.errors?.minlength"
+                >
+                  Este campo deve ter pelo menos 1 caracteres.
+                </small>
+
+                <small
+                  class="form-text error"
+                  *ngIf="loginForm.get('username')?.errors?.maxlength"
+                >
+                  Este campo não pode ter mais de 50 caracteres.
+                </small>
+              </div>
               <ion-item>
                 <ion-label position='floating'>{{ 'PASSWORD' | translate }}</ion-label>
-                <ion-input [(ngModel)]='account.password' name='password' type='password' id='password'></ion-input>
+                <ion-input formControlName="password" name='password' type='password' id='password'></ion-input>
+                <div *ngIf="loginForm.get('username')!.invalid && (loginForm.get('username')!.dirty || loginForm.get('username')!.touched)">
+                  <small
+                    class="form-text error"
+                    *ngIf="loginForm.get('username')?.errors?.required"
+                  >
+                    O campo senha é obrigatório.
+                  </small>
+
+                  <small
+                    class="form-text error"
+                    *ngIf="loginForm.get('username')?.errors?.minlength"
+                  >
+                    Este campo deve ter pelo menos 1 caracteres.
+                  </small>
+
+                  <small
+                    class="form-text error"
+                    *ngIf="loginForm.get('username')?.errors?.maxlength"
+                  >
+                    Este campo não pode ter mais de 50 caracteres.
+                  </small>
+                </div>
               </ion-item>
               <ion-item lines='none'>
                 <ion-label>{{ 'REMEMBER_ME' | translate }}</ion-label>
-                <ion-checkbox [(ngModel)]='account.rememberMe' name='rememberMe'id='rememberMe'></ion-checkbox>
+                <ion-checkbox formControlName="rememberMe" name='rememberMe'id='rememberMe'></ion-checkbox>
               </ion-item>
 
               <div class='ion-text-center ion-padding-top'>
