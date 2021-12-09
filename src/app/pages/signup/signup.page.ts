@@ -23,7 +23,7 @@ export class SignupPage implements OnInit {
     firstName: '',
     lastName: '',
     password: '',
-    langKey: 'en',
+    langKey: 'pt-br',
   };
 
   // Our translated text strings
